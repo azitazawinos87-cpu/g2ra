@@ -1,0 +1,38 @@
+{
+  "name": "ghtun",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
+     "ghcr.io/devcontainers/features/sshd:1": {
+    "version": "latest"
+  }
+  },
+
+  "postStartCommand": "chmod +x /workspaces/g2ray/watch.sh /workspaces/g2ray/start_services.sh",
+
+  "postAttachCommand": {
+    "public": "gh codespace ports visibility 443:public -c $CODESPACE_NAME",
+    "xray": "pkill -f '/usr/local/bin/xray' 2>/dev/null || true; nohup sudo /usr/local/bin/xray -c /etc/config.json > /tmp/xray.out 2>&1 &",
+    "watchdog": "pkill -f '/workspaces/g2ray/watch.sh' 2>/dev/null || true; nohup /workspaces/g2ray/watch.sh > /tmp/watchdog.out 2>&1 &"
+  },
+
+  "portsAttributes": {
+    "443": {
+      "label": "xray",
+      "protocol": "http",
+      "onAutoForward": "silent"
+    }
+  },
+  "forwardPorts": [443],
+  "hostRequirements": {
+    "cpus": 2
+  }
+}

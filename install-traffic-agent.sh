@@ -8,7 +8,7 @@ TRAFFIC_INTERVAL="${TRAFFIC_INTERVAL:-10}"
 XRAY_INBOUND_TAG="${XRAY_INBOUND_TAG:-vless-in}"
 WORKSPACE_NAME="${TRAFFIC_WORKSPACE:-${CODESPACE_NAME:-$(hostname)}}"
 
-if [ "$TRAFFIC_API_URL" = "http://141.11.18.186:3010/api/traffic/push" ] || [ "$TRAFFIC_TOKEN" = "change_me_traffic_token" ]; then
+if [ "$TRAFFIC_API_URL" = "changz" ] || [ "$TRAFFIC_TOKEN" = "cha" ]; then
   echo "ERROR: Set TRAFFIC_API_URL and TRAFFIC_TOKEN before running this script."
   exit 1
 fi

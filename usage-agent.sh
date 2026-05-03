@@ -39,7 +39,7 @@ if [ -z "$TRAFFIC_WORKSPACE" ]; then
   exit 1
 fi
 
-if [ "$TRAFFIC_API_URL" = "http://141.11.18.186:3010/api/traffic/push" ] || [ "$TRAFFIC_TOKEN" = "change_me_traffic_token" ]; then
+if [ "$TRAFFIC_API_URL" = "change me url" ] || [ "$TRAFFIC_TOKEN" = "chchngemetoken" ]; then
   log "ERROR: TRAFFIC_API_URL/TRAFFIC_TOKEN is not configured"
   exit 1
 fi

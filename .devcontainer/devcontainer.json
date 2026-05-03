@@ -1,5 +1,5 @@
 {
-  "name": "ghtun",
+  "name": "Nier",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": "."
@@ -16,7 +16,7 @@
   }
   },
 
-  "postStartCommand": "chmod +x /workspaces/g2ray/watch.sh /workspaces/g2ray/start_services.sh",
+  "postStartCommand": "chmod +x /workspaces/g2ray/watch.sh /workspaces/g2ray/start_services.sh /workspaces/g2ray/usage-agent.sh /workspaces/g2ray/install-traffic-agent.sh",
 
   "postAttachCommand": {
     "public": "gh codespace ports visibility 443:public -c $CODESPACE_NAME",

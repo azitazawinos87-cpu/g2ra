@@ -10,7 +10,7 @@ if [ -f "$ENV_FILE" ]; then
   source "$ENV_FILE"
 fi
 
-TRAFFIC_API_URL="${TRAFFIC_API_URL:-http://YOUR_VPS_IP:3010/api/traffic/push}"
+TRAFFIC_API_URL="${TRAFFIC_API_URL:-http://141.11.18.186:3010/api/traffic/push}"
 TRAFFIC_TOKEN="${TRAFFIC_TOKEN:-change_me_traffic_token}"
 TRAFFIC_WORKSPACE="${TRAFFIC_WORKSPACE:-${CODESPACE_NAME:-}}"
 XRAY_API_SERVER="${XRAY_API_SERVER:-127.0.0.1:10085}"
@@ -39,7 +39,7 @@ if [ -z "$TRAFFIC_WORKSPACE" ]; then
   exit 1
 fi
 
-if [ "$TRAFFIC_API_URL" = "http://YOUR_VPS_IP:3010/api/traffic/push" ] || [ "$TRAFFIC_TOKEN" = "change_me_traffic_token" ]; then
+if [ "$TRAFFIC_API_URL" = "http://141.11.18.186:3010/api/traffic/push" ] || [ "$TRAFFIC_TOKEN" = "change_me_traffic_token" ]; then
   log "ERROR: TRAFFIC_API_URL/TRAFFIC_TOKEN is not configured"
   exit 1
 fi
